@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>3D PDF FlipBook</title>
+
+<meta name="description" content="Modern 3D PDF Flipbook">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+
+<!-- PDF.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.9.179/pdf.min.js"></script>
+
+</head>
+
+<body>
+
+<!-- Loading -->
+
+<div id="loading">
+
+<div class="loader"></div>
+
+<p>Loading PDF...</p>
+
+</div>
+
+<!-- Toolbar -->
+
+<header class="toolbar">
+
+<div class="left-tools">
+
+<button id="btnPrev" title="Previous Page">
+◀
+</button>
+
+<button id="btnNext" title="Next Page">
+▶
+</button>
+
+<div class="divider"></div>
+
+<button id="btnZoomOut">
+－
+</button>
+
+<button id="btnZoomIn">
+＋
+</button>
+
+<div class="divider"></div>
+
+<button id="btnFullscreen">
+⛶
+</button>
+
+</div>
+
+<div class="center-tools">
+
+<span id="pageIndicator">
+
+Page
+<span id="currentPage">1</span>
+
+/
+
+<span id="totalPages">0</span>
+
+</span>
+
+</div>
+
+<div class="right-tools">
+
+<button id="btnTheme">
+
+🌙
+
+</button>
+
+</div>
+
+</header>
+
+<!-- Viewer -->
+
+<div class="viewer">
+
+<!-- Left Navigation -->
+
+<button class="nav left" id="desktopPrev">
+
+❮
+
+</button>
+
+<!-- Book -->
+
+<div class="stage" id="stage">
+
+<div class="book" id="book">
+
+<div class="page-wrap" id="pageWrap">
+
+<!-- Current Page -->
+
+<div class="page" id="page">
+
+<div class="placeholder">
+
+Loading...
+
+</div>
+
+</div>
+
+<!-- Page Curl -->
+
+<div class="curl" id="curl"></div>
+
+<!-- Flip Animation -->
+
+<div class="flip-layer" id="flipLayer">
+
+<div class="face front" id="flipFront"></div>
+
+<div class="face back" id="flipBack"></div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Right Navigation -->
+
+<button class="nav right" id="desktopNext">
+
+❯
+
+</button>
+
+</div>
+
+<!-- Mobile Navigation -->
+
+<div class="mobile-nav">
+
+<button id="mPrev">
+
+❮
+
+</button>
+
+<button id="mNext">
+
+❯
+
+</button>
+
+</div>
+
+<!-- Thumbnail Drawer -->
+
+<aside class="thumbnail-panel" id="thumbnailPanel">
+
+<div class="thumb-header">
+
+<h3>Pages</h3>
+
+</div>
+
+<div id="thumbnails">
+
+</div>
+
+</aside>
+
+<!-- Toast -->
+
+<div id="toast"></div>
+
+<!-- Keyboard Help -->
+
+<div id="helpOverlay" class="hidden">
+
+<div class="help-card">
+
+<h2>Keyboard Shortcuts</h2>
+
+<table>
+
+<tr>
+
+<td>→</td>
+
+<td>Next Page</td>
+
+</tr>
+
+<tr>
+
+<td>←</td>
+
+<td>Previous Page</td>
+
+</tr>
+
+<tr>
+
+<td>F</td>
+
+<td>Fullscreen</td>
+
+</tr>
+
+<tr>
+
+<td>+</td>
+
+<td>Zoom In</td>
+
+</tr>
+
+<tr>
+
+<td>-</td>
+
+<td>Zoom Out</td>
+
+</tr>
+
+<tr>
+
+<td>Esc</td>
+
+<td>Close</td>
+
+</tr>
+
+</table>
+
+<button id="closeHelp">
+
+Close
+
+</button>
+
+</div>
+
+</div>
+
+<!-- Footer -->
+
+<footer class="footer">
+
+<span>
+
+3D PDF FlipBook
+
+</span>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
